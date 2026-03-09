@@ -68,6 +68,7 @@ model = CRAF_main(config).to('cuda:0')
 print(model.get_parameter_number())
 optimizer = torch.optim.Adam(model.parameters(), lr=1.2e-4, weight_decay=0, betas=(0.99, 0.999))
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.6, patience=10, min_lr=1.e-5)
+
 print("model.parameter_number:", model.get_parameter_number())
 
 exp = Experiment(
@@ -76,7 +77,7 @@ exp = Experiment(
     )
 exp.fit_step(
     500000, valid_per_step=1000, train_batch_size=128, valid_batch_size=256, print_log=True,
-    with_tb=True, logdir='./pretraining_log', schedule_key='loss', num_workers=16, 
+    with_tb=True, logdir='./ligand_pretraining_log', schedule_key='loss', num_workers=16, 
     pin_memory=False, follow_batch=[], exclude_keys=[], collate_fn=None, 
     max_edge_num_in_batch=2000000
     )

@@ -153,7 +153,7 @@ def main():
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, factor=0.6, patience=10, min_lr=1.e-6)
     ntxent_criterion = NTXentLoss(device=device, temperature=args.temperature, use_cosine_similarity=True)
 
-    now = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
     output_dir = os.path.join(args.save_path, now)
     os.makedirs(output_dir, exist_ok=True)
 

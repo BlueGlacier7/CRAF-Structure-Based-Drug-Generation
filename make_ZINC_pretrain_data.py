@@ -88,9 +88,8 @@ import pickle
 from multiprocessing import Pool
 
 
-#sdf_path='./path/to/ZINC/dataset/'
-sdf_path='./dataset/zinc_dataset/'  #
-processed_path='./pretrain_data/ZINC_PretrainDataset.lmdb'  # 
+sdf_path='./path/to/ZINC/dataset/'
+processed_path='./pretrain_data/ZINC_PretrainingDataset.lmdb'  ## output 
 sdf_list = glob.glob(sdf_path+'/*.sdf')
 db = lmdb.open(
             processed_path,

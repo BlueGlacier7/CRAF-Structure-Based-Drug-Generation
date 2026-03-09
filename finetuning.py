@@ -1,6 +1,6 @@
 import torch
 torch.multiprocessing.set_sharing_strategy('file_system')
-from scripts.model import PocketFlow, reset_parameters, freeze_parameters
+from scripts.model import CRAF_main, reset_parameters, freeze_parameters
 from scripts.model.craf import config as default_config
 from scripts.utils import Experiment, LoadDataset
 from scripts.utils.transform import *
@@ -39,18 +39,10 @@ ligand_pretrain_ckpt = './path/to/ligand_pretraining/ckpt'
 cl_ckpt_exists = cl_pretrain_ckpt is not None and os.path.exists(cl_pretrain_ckpt)
 ligand_ckpt_exists = ligand_pretrain_ckpt is not None and os.path.exists(ligand_pretrain_ckpt)
 
-def patch_config(cfg):
-    cfg.num_bond_types = 4
-    cfg.protein_atom_feature_dim = 27
-    cfg.ligand_atom_feature_dim = 15
-    cfg.num_atom_type = 9
-    cfg.msg_annealing = True
-    return cfg
-
 if ligand_ckpt_exists and cl_ckpt_exists:
     ligand_ckpt = torch.load(ligand_pretrain_ckpt, map_location=device)
     config = ligand_ckpt['config']
-    model = PocketFlow(config).to(device)
+    model = CRAF_main(config).to(device)
     model.load_state_dict(ligand_ckpt['model'])
     cl_ckpt = torch.load(cl_pretrain_ckpt, map_location=device)
     encoder_state_dict = {k.replace('encoder.', ''): v for k, v in cl_ckpt['model'].items() if k.startswith('encoder.')}

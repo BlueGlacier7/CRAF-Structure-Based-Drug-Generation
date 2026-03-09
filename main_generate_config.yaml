@@ -11,7 +11,7 @@ focus_threshold: 0.5  # the threshold of probility for focus atom
 choose_max: True  # whether choose the atom that has the highest prob as focus atom
 min_dist_inter_mol: 3.0  # inter-molecular dist cutoff between protein and ligand.
 bond_length_range: [1.0, 2.0]  # the range of bond length for mol generation.
-max_double_in_6ring: 0  
+max_double_in_6ring: 0  #
 with_print: True  # whether print SMILES in generative process
 readme: None  # description of this genrative task
 

@@ -49,16 +49,16 @@ def get_data_loaders(aug1_path, aug2_path, batch_size=32, shuffle=True, val_rati
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--config', type=str, help='Path to the YAML config file')
-    parser.add_argument('--all_ids', type=str, default='./graph1/all_ids.npy')
-    parser.add_argument('--aug1', type=str, default='./graph1/aug_graphs_1.lmdb')
-    parser.add_argument('--aug2', type=str, default='./graph1/aug_graphs_2.lmdb')
-    parser.add_argument('--batch_size', type=int, default=32)
-    parser.add_argument('--epochs', type=int, default=100)
-    parser.add_argument('--lr', type=float, default=1e-3)
+    parser.add_argument('--all_ids', type=str, default='./graph_results/all_ids.npy')
+    parser.add_argument('--aug1', type=str, default='./graph_results/aug_graphs_1.lmdb')
+    parser.add_argument('--aug2', type=str, default='./graph_results/aug_graphs_2.lmdb')
+    parser.add_argument('--batch_size', type=int, default=216)
+    parser.add_argument('--epochs', type=int, default=500)
+    parser.add_argument('--lr', type=float, default=5e-4)
     parser.add_argument('--save_path', type=str, default='./outputs_cl')
     parser.add_argument('--device', type=str, default='cuda:0')
     parser.add_argument('--val_ratio', type=float, default=0.1)
-    parser.add_argument('--temperature', type=float, default=0.5, help='Temperature for contrastive loss calculation')
+    parser.add_argument('--temperature', type=float, default=0.1, help='Temperature for contrastive loss calculation')
     args = parser.parse_args()
 
     if args.config is not None:
