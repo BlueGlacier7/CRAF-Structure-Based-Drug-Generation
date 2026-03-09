@@ -1,0 +1,10 @@
+all_ids: ./graph_results/all_ids.npy
+aug1: ./graph_results/aug_graphs_1.lmdb
+aug2: ./graph_results/aug_graphs_2.lmdb
+batch_size: 216
+epochs: 500
+lr: 0.0005
+temperature: 0.1
+save_path: ./cl_pretraining_log
+device: cuda:0
+val_ratio: 0.1
