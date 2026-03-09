@@ -61,7 +61,15 @@ python finetuning.py
 ```
 * Output: The final model checkpoint will be saved in the `finetuning_log` directory.
 
-## Citation
-TODO
+## Citation  
+```
+@article{  
+  title={Contrastive Representation Learning Enhanced Autoregressive Flows for Structure-Based Drug Generation},  
+  author={Xingchen Zhou, Jinfeng Liu},  
+  journal={Under submission},  
+  year={2026},  
+  url={https://github.com/BlueGlacier7/CRAF-Structure-Based-Drug-Generation}  
+}
+```
 
 
