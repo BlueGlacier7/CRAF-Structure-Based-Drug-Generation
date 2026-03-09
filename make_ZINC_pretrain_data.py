@@ -89,7 +89,7 @@ from multiprocessing import Pool
 
 
 #sdf_path='./path/to/ZINC/dataset/'
-sdf_path='./dataset/zinc_dataset/qed_more_than_0.6'  #
+sdf_path='./dataset/zinc_dataset/'  #
 processed_path='./pretrain_data/ZINC_PretrainDataset.lmdb'  # 
 sdf_list = glob.glob(sdf_path+'/*.sdf')
 db = lmdb.open(
