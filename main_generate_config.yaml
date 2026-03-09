@@ -1,0 +1,18 @@
+pocket: test_samples/test_pocket10/1s1j_pocket10.pdb  # the pdb file of pocket in receptor
+ckpt: ckpt/CRAF_261000.pt  # the path of saved model
+num_gen: 1000  # the number of generateive molecule
+name: 1s1j  # receptor name
+root_path: gen_results  # the root path for saving results
+device: cuda:0  # cuda:x or cpu
+atom_temperature: 1.0  # temperature for atom sampling
+bond_temperature: 1.0  # temperature for bond sampling
+max_atom_num: 35  # the max atom number for generation
+focus_threshold: 0.5  # the threshold of probility for focus atom
+choose_max: True  # whether choose the atom that has the highest prob as focus atom
+min_dist_inter_mol: 3.0  # inter-molecular dist cutoff between protein and ligand.
+bond_length_range: [1.0, 2.0]  # the range of bond length for mol generation.
+max_double_in_6ring: 0  #
+with_print: True  # whether print SMILES in generative process
+readme: None  # description of this genrative task
+
+
