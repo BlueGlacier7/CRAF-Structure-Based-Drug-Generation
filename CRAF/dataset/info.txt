@@ -1,2 +1,0 @@
-The pretrain and fine-tuning data of this study are available at Zenodo: https://zenodo.org/records/18898386
-Please download the data and save it in the "dataset" folder.
