@@ -1,7 +1,7 @@
 all_ids: ./graph_results/all_ids.npy
 aug1: ./graph_results/aug_graphs_1.lmdb
 aug2: ./graph_results/aug_graphs_2.lmdb
-batch_size: 216
+batch_size: 256
 epochs: 500
 lr: 0.0005
 temperature: 0.1
